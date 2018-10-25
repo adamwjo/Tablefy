@@ -8,12 +8,21 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    Reservation.create(reservation_params)
+    render json: Reservation.create(reservation_params)
+  end
+
+  def destroy
+    render json: Reservation.find(params[:id]).destroy
+  end
+
+  def update
+    render json: Reservation.find(params[:id]).update(reservation_params) 
+
   end
 
   private
 
   def reservation_params
-    params.require(:reservation).permit(:name, :telephone_number, :date_of_reservation, :num_of_people, :table_id)
+    params.require(:reservation).permit(:name, :telephone_number, :date_of_reservation, :num_of_people, :table_id, :time)
   end
 end
