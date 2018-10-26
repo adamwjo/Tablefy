@@ -130,7 +130,7 @@ function renderReservation(res) {
     <p class="card-text">Time of Reservation: ${res.time}</p>
     <p class="card-text">Table:${res.table_id}</p>
     <a href="#" class="btn btn-primary" id="update-${res.id}" data-toggle="modal" data-target="#resEditFormModal"  >Update Reservation</a>
-    <a href="#" class="btn btn-warning" id= ${res.id}> Delete Reservation </a>
+    <a href="#" class="btn btn-warning" id= ${res.id}>Delete Reservation&nbsp</a>
   </div>
 </div>`
   resSection.appendChild(resCard)
